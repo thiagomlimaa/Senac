@@ -1,0 +1,16 @@
+body{
+    background-color: darkgrey;
+}
+
+
+h1{
+    color: rgb(38, 38, 129);
+}
+
+p{
+    color: blueviolet;
+}
+
+ul{
+    padding-left: 20px;
+}
