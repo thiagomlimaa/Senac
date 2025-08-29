@@ -24,7 +24,7 @@
       /* background-color: rgba(255, 255, 255, 0.9); */
       background-image: url(imagens/img-form.jpg);
       background-size: cover;
-      background-position: center top;
+      background-position: center center;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
@@ -56,10 +56,11 @@
     .login-container button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
+      background-color: white;
+      /* background: linear-gradient(to right, #4facfe, #00f2fe); */
       border: none;
       border-radius: 8px;
-      color: white;
+      color: black;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.5s, transform 0.3s;
@@ -71,16 +72,28 @@
       background: linear-gradient(to right, #00f2fe, #4facfe);
       transform: scale(1.05);
     }
+
+    h2{
+      color: white;
+    }
+
+    label{
+      color: white ;
+    }
+
+    
   </style>
 </head>
 <body>
   <div class="login-container">
     <h2>Login</h2>
     <form>
-    <label for="usuario">Usuário:</label>
+    <label class="label" for="usuario">Usuário:</label>
       <input type="text" placeholder="Usuário" required>
-      <label for="senha">Senha:</label>
+
+      <label class="label"for="senha">Senha:</label>
       <input type="password" placeholder="Senha" required>
+
       <button type="submit">Entrar</button>
     </form>
   </div>
