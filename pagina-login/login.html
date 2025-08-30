@@ -12,11 +12,12 @@
     }
 
     body{
-        /* background-image: url(imagens/fundologin01.jpg); */
+        background-color: black;
+        /* background-image: url(imagens/fundologin01.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-        background-position: center ;
+        background-position: center ; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -24,19 +25,31 @@
         margin: 0px;
     }
 
+    main{
+        padding-top: 100px;
+    }
+
     #form{
-        background-image: url(imagens/logo-fundo02.png);
+        /* background-image: url(imagens/logo-fundo02.png);
         background-repeat: no-repeat;
         background-size: 200px;
-        background-position: bottom right;
-        border: 1px solid white;
-        height: 350px;
+        background-position: bottom right; */
+        /* border: 1px solid white; */
+        height:415px;
         width: 300px;
         margin: 100px 100px;
         padding: 30px;
+        margin-top: -100px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.368);
+    }
+
+    #form:hover{
+        transform: scale(1.06);
+        box-shadow: 0 12px 20px rgba(0,0,0,0.4);
     }
 
     #titulo{
+        font-size: 24px;
         color: white;
         text-align: center;
         padding-top: 5px;
@@ -59,15 +72,21 @@
     #btn{
         text-align: center;
         padding: 20px;
-        border-radius: 5px solid white;
-        width: 140px;
+        border-radius: 10px;
+        width: 270px;
         height: 50px;
+    }
+    #btn:hover{
+        transform: scale(1.04); /* aumenta levemente */
+  background: linear-gradient(135deg, #777, #525252); /* inverte gradiente */
+  box-shadow: 0px 0px 15px rgba(51, 69, 76, 0.6);
     }
 
     #usuario, #senha{
-        width: 200px;
-        height: 20px;
-        border-radius: 2px solid white;
+        width: 270px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
 
     }
 
@@ -79,10 +98,18 @@
         left: 0;
         min-width: 100%;
         min-height: 40%;
-        z-index: -1; /* deixa o vídeo atrás do conteúdo */
-        object-fit: cover; /* corta para caber na tela */
+        z-index: -1; 
+        object-fit: cover;
+        height: 100%;
     }
-    
+
+    img{
+        width: 600px;
+        height: 265px;
+        margin-top: -170px;
+        margin-left: -150px;
+        object-fit: contain;
+    }
 
     
 </style>
@@ -95,6 +122,10 @@
             <spam>
                 <h1 id="titulo">LOGIN</h1>
             </spam>
+
+            <span>
+                <img src="imagens/logo-fundo02.png" alt="">
+            </span>
             
             <form action="#">
                 <label for="usuario">Usuário:</label>
@@ -109,7 +140,7 @@
     </main>
     
 <video autoplay muted loop id="bg-video">
-  <source src="video/pinterest-video-84.mp4" type="video/mp4">
+  <source src="video/pinterest-video-82.mp4" type="video/mp4">
 </video>
 
 
