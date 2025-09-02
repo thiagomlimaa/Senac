@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAPCE NIGHHT</title>
+    <title>SAPCE NIGHT</title>
 
 <style>
     body{
@@ -17,12 +17,37 @@
         background-position: center;
     }
     #foguete{
-        margin-left: -10%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: subir 5s linear infinite;
+    }
+    @keyframes subir {
+        from {
+            transform: translate(-50%, 100%);
+        }
+        to {
+            transform: translate(-50%, -205%);
+        }
     }
 
-    #astro{
-        margin-left: 30px;
+        
 
+
+    #astro{
+        position: absolute;
+        transform: translate();
+        animation: diagonal 7s linear infinite;
+        
+    }
+    @keyframes diagonal {
+        from {
+            transform: translate(510%, 0%) rotate(0deg);
+        }
+        to {
+            transform: translate(-600%, 0%) rotate(360deg);
+        }
     }
 
     
@@ -31,17 +56,14 @@
 </head>
 <body>
 
-    <img  id="foguete" src="imagens/foguete00.png" alt="Foguete" width="200px">
-
-    <img id="astro" src="imagens/astrounalta00.png" alt="Astrounalta" width="200px">
-
-    <img id="ateroide" src="imagens/asteroide00.png" alt="Asteroide" width="200px">
-
-    <img id="meteoro1" src="imagens/meteoro00.png" alt=" Meteoro 1" width="200px">
-
-    <img id="meteoro2" src="imagens/meteoro01.png" alt=" Meteoro 2" width="200px">
-
-    <img id="planeta" src="imagens/planet00.png" alt=" Planeta" width="200px">
+    <div class="wrapper">
+        <img  id="foguete" src="imagens/foguete00.png" alt="Foguete" width="200px">
+        <img id="astro" src="imagens/astrounalta00.png" alt="Astrounalta" width="150px">
+        <!-- <img id="ateroide" src="imagens/asteroide00.png" alt="Asteroide" width="200px"> -->
+        <!-- <img id="meteoro1" src="imagens/meteoro00.png" alt=" Meteoro 1" width="200px"> -->
+        <!-- <img id="meteoro2" src="imagens/meteoro01.png" alt=" Meteoro 2" width="200px"> -->
+        <!-- <img id="planeta" src="imagens/planet00.png" alt=" Planeta" width="200px"> -->
+    </div>
 
 
     
