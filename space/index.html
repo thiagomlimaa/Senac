@@ -16,6 +16,7 @@
         background-size: cover;
         background-position: center;
     }
+
     #foguete{
         position: absolute;
         top: 50%;
@@ -28,13 +29,13 @@
             transform: translate(-50%, 100%);
         }
         to {
-            transform: translate(-50%, -205%);
+            transform: translate(-50%, -400%);
         }
     }
 
+    
+
         
-
-
     #astro{
         position: absolute;
         transform: translate(0, 0);
@@ -63,9 +64,17 @@
         }
         to {
             transform: translate(-30%, -150%) rotate(360deg);
-            opacity: 0;
+            opacity: 0.5;
+        }
+        0% {
+            scale: 1;
+        }
+        100% {
+            scale: 0.2;
         }
     }
+
+  
 
     
 </style>
