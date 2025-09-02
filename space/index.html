@@ -37,11 +37,11 @@
 
     #astro{
         position: absolute;
-        transform: translate();
-        animation: diagonal 7s linear infinite;
+        transform: translate(0, 0);
+        animation: horizontal 7s linear infinite;
         
     }
-    @keyframes diagonal {
+    @keyframes horizontal {
         from {
             transform: translate(510%, 0%) rotate(0deg);
         }
@@ -50,16 +50,35 @@
         }
     }
 
-    
+    #asteroide{
+        position: absolute;
+        transform: translate(0, 0);
+        animation: diagonal 5s linear infinite;
+    }
 
+    @keyframes diagonal {
+        from {
+            transform: translate(370%, 300%) rotate(0deg);
+            opacity: 3;
+        }
+        to {
+            transform: translate(-30%, -150%) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    
 </style>
 </head>
 <body>
 
     <div class="wrapper">
         <img  id="foguete" src="imagens/foguete00.png" alt="Foguete" width="200px">
+
         <img id="astro" src="imagens/astrounalta00.png" alt="Astrounalta" width="150px">
-        <!-- <img id="ateroide" src="imagens/asteroide00.png" alt="Asteroide" width="200px"> -->
+
+        <img id="asteroide" src="imagens/asteroide00.png" alt="Asteroide" width="200px">
+
         <!-- <img id="meteoro1" src="imagens/meteoro00.png" alt=" Meteoro 1" width="200px"> -->
         <!-- <img id="meteoro2" src="imagens/meteoro01.png" alt=" Meteoro 2" width="200px"> -->
         <!-- <img id="planeta" src="imagens/planet00.png" alt=" Planeta" width="200px"> -->
