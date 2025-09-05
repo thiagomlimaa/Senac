@@ -13,6 +13,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 .main-container{
@@ -57,11 +58,14 @@ body{
 }
 
 .nav-item {
-   
+    text-align: center;
+    padding-top: 15px;
+    font-size: 20px;
     background-color: var(--cor4);
     margin-right: 55px;
     width: 160px;
     height: 40px;
+    border-radius: 15px;
 }
 
 .main-title{
@@ -73,18 +77,23 @@ body{
     font-size: 48px;
     margin-top: 40px;
     margin-bottom: 10%;
+    margin-left: 45px;
 }
 
 /* Botão Principal */
-.main-bottun{
+.main-button{
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 180px;
+    width: 30%;
     height: 50px;
     margin-bottom: 7%;
+    margin-left: 44px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
 }
 
 /* Loyout da seção principal */
@@ -117,6 +126,7 @@ body{
     width: 70%;
     height: 100%;
     gap: 10%;
+    margin-top: 10%;
 }
 
 .article-card {
@@ -143,4 +153,11 @@ body{
     font-size: 18px;
     font-weight: 400px;
     margin-top: 20px;
+}
+
+#planta3 {
+    margin-top: -27.5%;
+}
+#planta5 {
+    margin-top: -10%;
 }
