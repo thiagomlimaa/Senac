@@ -156,8 +156,18 @@ body{
 }
 
 #planta3 {
-    margin-top: -27.5%;
+    margin-top: -27.5;
+    
 }
+
 #planta5 {
     margin-top: -10%;
+}
+
+#planta2 {
+    margin-top: 2%;
+}
+
+#planta1, #planta2, #planta3, #planta3, #planta4, #planta5 {
+    background-color: var(--cor3);
 }
