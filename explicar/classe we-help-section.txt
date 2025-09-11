@@ -1,0 +1,1 @@
+Qual a função da classe .we-help-section no arquivo style.css?
