@@ -10,15 +10,36 @@
 <button onclick="mostrarMensagem()">CLICK AQUI</button>
 
 <script> 
-    console.log("Nome: Thiago Lima");
-    console.log("Idade: 17");
-    console.log("Curso: Full-Stack");
+    // console.log("Nome: Thiago Lima");
+    // console.log("Idade: 17");
+    // console.log("Curso: Full-Stack");
 
-    console.log("Data e Hora atuais: " + new Date());
+    // console.log("Data e Hora atuais: " + new Date());
 
-    function mostrarMensagem() {
-        alert("Seja bem-vindo ao mundo do JavaScript!");
-      }
+    // function mostrarMensagem() {
+    //     alert("Seja bem-vindo ao mundo do JavaScript!");
+    //   }
+
+    //   let idade = 25;
+    //   idade = 26; // pode mudar
+    //   console.log(idade);
+
+
+    // Solicita o nome do usuário
+let nome = prompt("Digite seu nome:");
+
+// Solicita a idade do usuário
+let idadeString = prompt("Digite sua idade:");
+
+// Converte a idade para número
+let idade = Number(idadeString);
+
+// Soma 10 à idade
+let idadeFutura = idade + 10;
+
+// Exibe o resultado no console
+console.log(`Olá, ${nome}! Sua idade daqui a 10 anos será: ${idadeFutura}`);
+
 </script>
 
 </body>
