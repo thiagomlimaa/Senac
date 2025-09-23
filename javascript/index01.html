@@ -37,12 +37,29 @@
 //   console.log("Usuário ou senha incorretos.")
 // }
 
-for (let i = 1; i <= 20; i++) {
-  if (i % 2 !== 0) {
-    continue; // pula os ímpares
+// atividade pra casa
+let num = 7; 
+let tentativa;
+
+do { 
+  tentativa = prompt("Digite um Número:");
+  if (tentativa  == num) {
+    console.log("Você acertou, parabéns");
+    break;
   }
-  console.log(i); // exibe apenas os pares
+  
+ else { 
+  console.log("Voê Errou!");
 }
+} while (tentativa !==num) {
+  
+}
+ 
+
+
+
+
+
 
 
 
