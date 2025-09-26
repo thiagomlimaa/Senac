@@ -1,14 +1,24 @@
 // Solicita o nome do usuário
-let nome = prompt("Digite seu nome:");
+// let nome = prompt("Digite seu nome:");
 
-// Solicita a idade do usuário
-let idadeString = prompt("Digite sua idade:");
+// // Solicita a idade do usuário
+// let idadeString = prompt("Digite sua idade:");
 
-// Converte a idade para número
-let idade = Number(idadeString);
+// // Converte a idade para número
+// let idade = Number(idadeString);
 
-// Soma 10 à idade
-let idadeFutura = idade + 10;
+// // Soma 10 à idade
+// let idadeFutura = idade + 10;
 
-// Exibe o resultado no console
-console.log(`Olá, ${nome}! Sua idade daqui a 10 anos será: ${idadeFutura}`);
+// // Exibe o resultado no console
+// console.log(`Olá, ${nome}! Sua idade daqui a 10 anos será: ${idadeFutura}`);
+
+
+
+let compras = ["água, arroz, coca-cola"];
+console.log(compras);
+
+compras.shift();
+compras.unshift("legumes");
+
+console.log(compras);
