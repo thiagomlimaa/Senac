@@ -96,3 +96,20 @@ ATIVIDADE 4
 // usuarios[2].email = 'lucas@gmail.com';
 
 // console.log(usuarios);
+
+
+
+
+ATIVIDADE PRA CASA
+
+// Deve ter um array biblioteca com objetos representando livros.
+
+// Cada livro deve ter: titulo, autor, ano, emprestado (true/false).
+
+
+// O sistema deve permitir:
+
+// Cadastrar um novo livro.
+// Listar todos os livros.
+// Marcar um livro como emprestado.
+// Mostrar apenas os livros disponíveis.
