@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Simples</title>
+</head>
+<body>
+    <!-- h1 com o nome -->
+    <h1 id="nomeTitulo">Thiago Moreira</h1>
+
+    <!--input novo nome -->
+    <input type="text" id="novoNome" placeholder="Digite um novo nome">
+    <!-- btn atualiza o nome -->
+    <button id="atualizarNome">Atualizar Nome</button>
+
+    <br><br>
+
+    <!-- paragrafo inicial -->
+    <p id="descricao">Essa é uma descrição inicial do perfil.</p>
+    <!-- input de descrição -->
+    <input type="text" id="novoTexto" placeholder="Digite uma nova descrição">
+
+    <!-- btn atualiza descrição -->
+    <button id="atualizarDescricao">Atualizar Descrição</button>
+
+    <script>
+        
+        const titulo = document.getElementById('nomeTitulo');
+        const inputNome = document.getElementById('novoNome');
+        const botaoAtualizarNome = document.getElementById('atualizarNome');
+
+        const descricao = document.getElementById('descricao');
+        const inputTexto = document.getElementById('novoTexto');
+        const botaoAtualizarDescricao = document.getElementById('atualizarDescricao');
+
+        // Atualiza nome
+        botaoAtualizarNome.addEventListener('click', function() {
+            const novoNome = inputNome.value;
+            if(novoNome) {
+                titulo.innerText = novoNome;
+                inputNome.value = ""; 
+            }
+        });
+
+        //  atualiza descrição
+        botaoAtualizarDescricao.addEventListener('click', function() {
+            const texto = inputTexto.value;
+            if(texto) {
+                descricao.innerText = texto;
+                inputTexto.value = ""; 
+            }
+        });
+    </script>
+</body>
+</html>
