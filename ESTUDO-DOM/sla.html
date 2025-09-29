@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Notícias</title>
+</head>
+<body>
+  <h1>Notícias</h1>
+
+  <input type="text" id="novaNoticia" placeholder="Digite a notícia">
+  <button onclick="adicionarNoticia()">Adicionar Notícia</button>
+
+  <div id="noticias"></div>
+
+  <script>
+    function adicionarNoticia() {
+      let input = document.getElementById("novaNoticia");
+      let texto = input.value;
+
+      if (texto !== "") {
+        let container = document.getElementById("noticias");
+
+        // cria um novo parágrafo
+        let p = document.createElement("p");
+        p.innerText = texto;
+
+        // adiciona no container
+        container.appendChild(p);
+
+        // adiciona um <hr> depois
+        container.appendChild(document.createElement("hr"));
+
+        // limpa o input
+        input.value = "";
+      }
+    }
+  </script>
+
+
+
+<input type="text" id="novaNoticia" placeholder="Digite sua Notícia">
+
+<button onclick="adicionarNoticia" >Enviar Notícia</button>
+
+<div id="noticias" ></div>
+
+<script>
+    function adicionarNoticia() {
+        let input = document.getElementById("novaNoticia");
+        let texto = input.value;
+
+        if ( texto !== "") {
+            let container = document.getElementById("noticias");
+
+            let p = document.createElement("p")
+            p.innerText = texto;
+
+            container.appendChild(p);
+
+            container.appendChild(document.createElement("hr"));
+
+            input.value = "";
+        }
+    }
+</script>
+</body>
+</html>

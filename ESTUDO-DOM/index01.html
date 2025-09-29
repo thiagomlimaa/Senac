@@ -5,20 +5,57 @@
     <meta charset="UTF-8">
     <title>Exemplo querySelector</title>
 </head>
-
 <body>
-    <p id="texto" >Texto 1</p>
-    <p id="texto" >Texto 2</p>
+    <!-- Criar uma mini página de notícias: -->
+
+<!-- Um título principal (h1). -->
+
+<!-- Um botão "Adicionar Notícia" que insere, dentro de uma div, um novo parágrafo com o texto digitado em um campo de input. -->
+
+<!-- Cada nova notícia deve aparecer embaixo da anterior (usar innerHTML ou appendChild). -->
+
+<!-- Diferenciar notícias com <hr> entre elas. -->
+
+<h1>Página de Noticias</h1>
+
+<input type="text" id="noticia" placeholder="Digite sua notícia">
+
+<button onclick="addNoticia()" >Adicione uma nova noticia!</button>
+
+<div id="newNews" ></div>
+
 <br>
-    <button onclick="mudartxt1()" >Mudar o Texto</button>
+
+<p>
+    A indústria de tecnologia registrou crescimento recorde no último trimestre.
+    Empresas de inteligência artificial continuam atraindo grandes investimentos.
+    Novas soluções em nuvem estão sendo adotadas por pequenas e médias empresas.
+    O setor de smartphones aposta em dispositivos dobráveis como tendência.
+    Especialistas preveem que a automação vai gerar novas profissões até 2030.
+</p>
 
 
 
     <script>
-        function mudartxt1() {
-            let elemento = document.getElementById('texto');
-            elemento.innerText = "Mudou o Primeiro texto";
-        }
+      function addnoticia() {
+        
+        let texto = document.getElementById("noticia").value;
+
+        let novoParag =document.createElement("p")
+
+        novoParag.innerText = texto;
+
+
+        document.getElementById("noticias").appendChild(novoParag);
+
+         document.getElementById("noticia").value = "";
+
+
+
+      }
+
+
+   
     </script>
 </body>
 </html>
