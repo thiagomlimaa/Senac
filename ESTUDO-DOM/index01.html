@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo querySelector</title>
+</head>
+
+<body>
+    <p id="texto" >Texto 1</p>
+    <p id="texto" >Texto 2</p>
+<br>
+    <button onclick="mudartxt1()" >Mudar o Texto</button>
+
+
+
+    <script>
+        function mudartxt1() {
+            let elemento = document.getElementById('texto');
+            elemento.innerText = "Mudou o Primeiro texto";
+        }
+    </script>
+</body>
+</html>
