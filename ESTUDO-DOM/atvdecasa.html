@@ -1,9 +1,38 @@
-<!DOCTYPE html>
+<!-- ATIVIDADE 1 = DOM PARTE 2 -->
+<!-- <!DOCTYPE html>
+<html lang="PT- BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE 1</title>
+</head>
+
+<body id="bd">
+
+    <button onclick="mudarCor()">MUDAR A COR</button>
+
+
+    <script>
+        function mudarCor() {
+            let cor = document.getElementById("bd");
+            cor.style.backgroundColor = "yellow";
+            cor.style.height = "100vh"; 
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+
+<!-- ATIVIDADE 2 = DOM PARTE 2 -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ATIVIDADE 2</title>
 </head>
 <body>
 
@@ -23,12 +52,127 @@
     </script>
  
 </body>
+</html> -->
+
+
+
+
+<!-- ATIVIDADE 3 = DOM PARTE 2 -->
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="lista">
+        <li>Item inicial</li>
+    </ul>
+    <input type="text" id="novoItem" placeholder="Digite um item">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+    <button onclick="removerUltimoItem()">Remover Último</button>
+
+    <script>
+        function adicionarItem() {
+            const lista = document.getElementById("lista");
+            const input = document.getElementById("novoItem");
+            const texto = input.value.trim();
+
+            if (texto) {
+                const novoItem = document.createElement("li"); // Cria um novo <li>
+                novoItem.innerText = texto; // Define o texto do item
+                lista.appendChild(novoItem); // Adiciona o item à lista
+                input.value = ""; // Limpa o campo de input
+            } else {
+                alert("Digite um item antes de adicionar!");
+            }
+        }
+
+        function removerUltimoItem() {
+            const lista = document.getElementById("lista");
+            if (lista.lastElementChild) {
+                lista.removeChild(lista.lastElementChild); // Remove o último item da lista
+            } else {
+                alert("A lista está vazia!");
+            }
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+
+<!-- Desafio em Grupo - 5xp: -->
+
+
+<!-- Criar um Mini Catálogo de Produtos Dinâmico. -->
+
+<!-- O grupo deve montar uma lista de produtos (ex: “Camisa”, “Calça”, “Tênis”) -->
+
+<!-- Cada produto deve ter nome e preço -->
+
+<!-- Os produtos devem ser exibidos em uma lista com estilo customizado (alterando CSS via JS) -->
+
+<!-- Adicionar a opção de remover um produto da lista -->
+
+<!-- Diferenciar produtos caros (ex: acima de R$100,00) mudando a cor do texto via .style -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Catálogo</title>
+</head>
+<body>
+
+  <h1>Mini Catálogo</h1>
+
+  <input id="nome" placeholder="Produto">
+  <input id="preco" type="number" placeholder="Preço">
+  <button onclick="adicionar()">Adicionar</button>
+  <button onclick="remover()">Remover</button>
+
+  <ul id="lista"></ul>
+
+  <script>
+    function adicionar() {
+      let nome = document.getElementById("nome").value;
+      let preco = Number(document.getElementById("preco").value);
+      if (!nome || !preco) return;
+
+      let li = document.createElement("li");
+      li.textContent = `${nome} - R$${preco.toFixed(2)}`;
+
+      
+      li.style.padding = "5px";
+      li.style.margin = "4px 0";
+      li.style.border = "1px solid gray";
+
+      
+      li.style.color = preco > 100 ? "red" : "green";
+
+      document.getElementById("lista").appendChild(li);
+
+     
+      document.getElementById("nome").value = "";
+      document.getElementById("preco").value = "";
+    }
+
+    function remover() {
+      let lista = document.getElementById("lista");
+      if (lista.lastChild) {
+        lista.removeChild(lista.lastChild);
+      }
+    }
+  </script>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
