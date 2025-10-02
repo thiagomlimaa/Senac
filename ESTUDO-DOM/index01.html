@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Exemplo querySelector</title>
+  <title>Validação de Input</title>
 </head>
 <body>
-    <input type="text" id="novaNoticia" placeholder="Digite sua Notícia">
+  <input type="text" id="campo" placeholder="Digite algo...">
+  
+  <p id="mensagem"></p>
 
-    <button onclick="adicionarNoticia" >Enviar Notícia</button>
-    
-    <div id="noticias" ></div>
-    
-    <script>
-        function adicionarNoticia() {
-            let input = document.getElementById("novaNoticia");
-            let texto = input.value;
-    
-            if ( texto !== "") {
-                let container = document.getElementById("noticias");
-    
-                let p = document.createElement("p")
-                p.innerText = texto;
-    
-                container.appendChild(p);
-    
-                container.appendChild(document.createElement("hr"));
-    
-                input.value = "";
-            }
-        }
+  <script>
+    const campo = document.getElementById('campo');
+    const mensagem = document.getElementById('mensagem');
 
-
-   
-    </script>
+    // Captura o evento 'input' (dispara a cada tecla digitada)
+    campo.addEventListener('input', function() {
+      if (campo.value.length < 5) {
+        mensagem.textContent = 'Digite pelo menos 5 caracteres!';
+        mensagem.style.color = 'red';
+      } else {
+        mensagem.textContent = 'Tudo certo!';
+        mensagem.style.color = 'green';
+      }
+    });
+  </script>
 </body>
 </html>
