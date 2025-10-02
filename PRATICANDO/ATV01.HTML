@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tt" >Aprendendo DOM</h1>
+
+    <p  class="descricao" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam aut, architecto molestias culpa voluptatibus ullam veniam vitae est esse. Dolor suscipit quia iste veritatis praesentium recusandae obcaecati, autem quo iusto!</p>
+
+    <p class="item" >Item</p>
+    <p class="item" >Item</p>
+    <p class="item" >Item</p>
+
+    <!-- <button onclick="btnTitulo()" >Mude o Título</button>
+
+    <button onclick="btnText()" >Mude o Texto</button> -->
+
+    <script>
+        let titulo = document.getElementById("tt")
+        titulo.setAttribute("id", "titulo-destaque");
+
+
+        // titulo.getAttribute("id")
+        console.log(titulo.getAttribute("id"))
+        console.log(titulo.removeAttribute("id"))
+        console.log(titulo.getAttribute("id"))
+
+
+    </script>
+
+
+</body>
+</html>
