@@ -1,3 +1,38 @@
+Questão 1
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <p id="texto">Texto</p>
+  <button id="btn">Clique para mudar</button>
+
+  <script>
+   
+    $("#btn").click(function() {
+      
+      $("#texto")
+        .css("color", "blue")  
+        .text("O texto foi alterado"); 
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+Questão 2
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +52,7 @@
   <div id="resultado"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  
+
   <script>
     $(document).ready(function() {
       $("#enviar").click(function() {
