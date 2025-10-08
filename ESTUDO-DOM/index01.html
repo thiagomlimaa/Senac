@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Validação de Input</title>
+  <meta charset="UTF-8">
+  <title>Mostrar/Ocultar Senha</title>
 </head>
 <body>
-  <input type="text" id="campo" placeholder="Digite algo...">
-  
-  <p id="mensagem"></p>
+  <input type="password" id="senha" placeholder="Digite sua senha">
+  <button id="mostrar">Mostrar</button>
 
   <script>
-    const campo = document.getElementById('campo');
-    const mensagem = document.getElementById('mensagem');
+    const senha = document.getElementById("senha");
+    const botao = document.getElementById("mostrar");
 
-    // Captura o evento 'input' (dispara a cada tecla digitada)
-    campo.addEventListener('input', function() {
-      if (campo.value.length < 5) {
-        mensagem.textContent = 'Digite pelo menos 5 caracteres!';
-        mensagem.style.color = 'red';
+    botao.addEventListener("click", () => {
+      if (senha.type === "password") {
+        senha.type = "text";      // mostra a senha
+        botao.textContent = "Ocultar";
       } else {
-        mensagem.textContent = 'Tudo certo!';
-        mensagem.style.color = 'green';
+        senha.type = "password";  // esconde a senha
+        botao.textContent = "Mostrar";
       }
     });
   </script>
