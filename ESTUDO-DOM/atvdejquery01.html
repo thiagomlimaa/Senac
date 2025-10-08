@@ -68,3 +68,44 @@ Questão 2
 
 </body>
 </html>
+
+
+Questão 3
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar, Esconder e Alternar Imagem</title>
+  
+</head>
+<body>
+
+  <button id="mostrar">Mostrar</button>
+  <button id="esconder">Esconder</button>
+  <button id="alternar">Alternar</button>
+
+  <br><br>
+  <img id="imagem" src="https://supervisao.com/wp-content/uploads/2025/02/Super-Visao-Modelo-de-carros-esportivos-parado-em-estacionamento-Autores-GS2-Marketing-Freepik%E2%80%8B.jpg" alt="Imagem exemplo">
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+        $("#mostrar").click(function() {
+            $("#imagem").show(1000);
+        });
+
+        $("#esconder").click(function() {
+            $("#imagem").hide(1000);
+        });
+
+        $('#alternar').click(function() {
+            $('#imagem').fadeToggle(2000)
+        })
+    })
+  </script>
+
+</body>
+</html>

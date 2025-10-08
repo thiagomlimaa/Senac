@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar, Esconder e Alternar Imagem</title>
+
+</head>
+
+<body>
+
+    <button id="alternar">Alternar</button>
+
+    <br><br>
+
+    <img class="img"
+        src="https://www.webmotors.com.br/imagens/prod/fotos-temas/CardDesktop/b1a79a3f-86c3-479f-9c7f-3d5c479863ab_CardDesktop.webp?s=fill&w=274&h=216&q=70"
+        alt="Miniatura">
+
+    <P class="discricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic autem corporis dignissimos
+        obcaecati pariatur molestias architecto aliquid itaque illum! Voluptates vitae nihil fugiat ipsa laudantium!
+        Quia commodi earum laudantium velit.</P>
+
+    <img class="img"
+        src="https://www.webmotors.com.br/imagens/prod/fotos-temas/CardDesktop/b1a79a3f-86c3-479f-9c7f-3d5c479863ab_CardDesktop.webp?s=fill&w=274&h=216&q=70"
+        alt="Miniatura">
+
+    <P class="discricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic autem corporis dignissimos
+        obcaecati pariatur molestias architecto aliquid itaque illum! Voluptates vitae nihil fugiat ipsa laudantium!
+        Quia commodi earum laudantium velit.</P>
+
+    <img class="img"
+        src="https://www.webmotors.com.br/imagens/prod/fotos-temas/CardDesktop/b1a79a3f-86c3-479f-9c7f-3d5c479863ab_CardDesktop.webp?s=fill&w=274&h=216&q=70"
+        alt="Miniatura">
+
+    <P class="discricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic autem corporis dignissimos
+        obcaecati pariatur molestias architecto aliquid itaque illum! Voluptates vitae nihil fugiat ipsa laudantium!
+        Quia commodi earum laudantium velit.</P>
+
+
+
+    <img id="imagem"
+        src="https://supervisao.com/wp-content/uploads/2025/02/Super-Visao-Modelo-de-carros-esportivos-parado-em-estacionamento-Autores-GS2-Marketing-Freepik%E2%80%8B.jpg"
+        alt="Grande">
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#alternar').click(function () {
+                $('.discricao').slideToggle(2000)
+            })
+        })
+
+        $(document).ready(function () {
+            $(".img").click(function () {
+                $("img").attr("src", "https://cdn.shopify.com/s/files/1/0853/0663/8612/files/Top_10_carros_esportivos_de_luxo-Koenigsegg-Jesko-Absolut_jpg_600x600.webp?v=1746035396")
+            })
+        })
+
+    </script>
+</body>
+
+</html>
