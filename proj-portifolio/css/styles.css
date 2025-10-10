@@ -11276,10 +11276,16 @@ body {
 
 .timeline-item.left::before {
   right: -10px;
+  background-color: #9e9689;
+
+  
 }
 
 .timeline-item.right::before {
   left: -10px;
+  background-color: #9e9689;
+
+  
 }
 
 /* Responsivo */
@@ -11310,3 +11316,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+
+/* CONTENER DAS LOGOS DE TACNOLOGIAS */
+.content-logos{
+  width: 100px;
+  height: 100px;
+}
+
