@@ -11202,11 +11202,12 @@ body {
   padding: 5rem 0;
 }
 
+
 /* CSS  DA TIMELINE TECNOLOGIA */
 
 .timeline-section {
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 0;;
 }
 
 .timeline-section h2 {
@@ -11232,6 +11233,7 @@ body {
   margin-left: -2px;
 }
 
+/* obs */
 .timeline-item {
   padding: 20px;
   position: relative;
@@ -11246,12 +11248,14 @@ body {
   left: 50%;
 }
 
+/* QUADRADOS */
 .timeline-item .content {
   background: white;
   padding: 20px;
   border-radius: 10px;
   position: relative;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  
 }
 
 .timeline-item.left .content {
@@ -11323,5 +11327,14 @@ body {
 .content-logos{
   width: 100px;
   height: 100px;
+}
+
+/* MODIFICAÇÕES DA ABA PROJETOS */
+
+#projetos-h2{
+  text-align: center;
+  margin-top: -90px;
+  margin-bottom: 40px;
+  color: #9e9689;
 }
 
