@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=experiment" />
+    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="../estilos/reset.css">
+    <title>Ia Sistem</title>
+</head>
+<body>
+    <nav>
+        <!--HEADER COMPUTADOR-->
+        <div class="computador">
+            <section id="conta">
+                <!--USUARIO-->
+                <img src="../imagens/icones/person.png" alt="">
+                <p id="nome-usuario">MATHEUS RIBEIRO <span style="display: block; text-align: center;">Atendente</span></p>
+                <!--FIM USUARIO-->
+            </section>
+            <section id="navegacao">
+                <!--MENU LISTA-->
+                <ul id="itens-navegacao">
+                    <li>
+                        <a href="../iframe/gerar-os.html" target="ifr">
+                            <img class="icones" src="../imagens/icones/1.png" alt="">Gerar OS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../iframe/editar-os.html" target="ifr">
+                            <img class="icones" src="../imagens/icones/1.png" alt="">Editar OS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../iframe/solicitacoes-pendentes.html" target="ifr">
+                            <img class="icones" src="../imagens/icones/1.png" alt="">Solicitações Pendentes
+                        </a>
+                    </li>
+                    
+                </ul>
+                <!--FIM MENU LISTA-->
+            </section>
+        </div>
+        <!--FIM COMPUTADOR-->
+
+        <!--CELULAR-->
+        <div class="celular , navegacao">
+            <!--USUARIO-->
+            <section id="conta">
+                <img id="person" src="../imagens/icones/person.png" alt="">
+            </section>
+            <img id="logo" src="../imagens/ia-system.png" alt="">
+            <!--FIM USUARIO-->
+        </div>
+        <aside>
+            <p><a href="../index.html">DESCONECTAR-SE</a></p>
+        </aside>
+    </nav>
+    
+    <main>
+        <!--COMPUTADOR-->
+        <iframe name="ifr" src="../preload.html" frameborder="0" id="conteudo"></iframe>
+        <!--FIM COMPUTADOR-->
+
+        <!--CELULAR-->
+        <section id="options">
+            <!--BLOCOS MENU LISTA-->
+            <ul>
+                <a href="../iframe/solicitacao-de-servicos.html">
+                    <li>
+                        <img class="icones" src="../imagens/icones-azuis/2.png" alt="">
+                        <h2>SOLICITAÇÃO DE SERVIÇO</h2>
+                    </li>
+                </a>
+            </ul>
+            <!--FIM BLOCOS MENU LISTA-->
+        </section>
+        <!--FIM CELULAR-->
+    </main>
+    <script src="../javascript/script.js"></script>
+
+</body>
+</html>

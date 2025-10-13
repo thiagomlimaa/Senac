@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>IA Sistem</title>
+    <link href="/assistencia-tecnica/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- ESTILOS GERAIS PARA O NOVO CONTEÚDO --- */
+
+        /* Ajuste do layout para que o conteúdo principal use 100% */
+        #content-main {
+            padding: 20px;
+            /* Espaçamento interno da área de trabalho */
+        }
+
+        .content-header h1 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .card-os {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .card-os h2 {
+            color: #007bff;
+            /* Azul padrão */
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        /* Layout de Formulário (Duas Colunas) */
+        .form-group-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-item {
+            flex: 1;
+            /* Faz com que os itens ocupem o mesmo espaço */
+        }
+
+        /* Estilos de Input e Labels */
+        .card-os label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .card-os input[type="text"],
+        .card-os select,
+        .card-os textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        /* Botão de Submissão */
+        .btn-submit-os {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #28a745;
+            /* Verde */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit-os:hover {
+            background-color: #218838;
+        }
+
+        /* Tabela de Histórico */
+        .table-card {
+            padding: 20px;
+        }
+
+        #tabela-os-completa {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        #tabela-os-completa th,
+        #tabela-os-completa td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+        }
+
+        #tabela-os-completa th {
+            background-color: #f7f7f7;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Tags de Status e Prioridade (reutilizando o estilo do painel anterior) */
+        .status-tag,
+        .priority-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+            margin-right: 5px;
+        }
+
+        /* Status: Aberto (Amarelo) */
+        .tag-aberto {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        /* Prioridade: Alta (Vermelho) */
+        .tag-alta {
+            background-color: #dc3545;
+        }
+
+        .tag-media {
+            background-color: #007bff;
+        }
+
+        .tag-baixa {
+            background-color: #28a745;
+        }
+
+        .action-icon {
+            color: #007bff;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Mensagens de Alerta */
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #2E363F;">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3"> <img src="/assistencia-tecnica/imagens/ia-system.png" alt="logo" height="80"></a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" style="margin-top:6px; bottom: 5px;" type="text" placeholder="Procurar..."
+                    aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" style="margin-top: 6px; bottom: 5px;" id="btnNavbarSearch"
+                    type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Meus Dados</a></li>
+                    <li><a class="dropdown-item" href="#!">Minhas Solicitações</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="/assistencia-tecnica/index.html">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link" href="/assistencia-tecnica/usuarios/gestor.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Cadastros
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/assistencia-tecnica/clientes.html">Clientes</a>
+                                <a class="nav-link" href="/assistencia-tecnica/fornecedores.html">Fornecedores</a>
+                            </nav>
+                        </div>
+                        <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Ordens de Serviço
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="/assistencia-tecnica/login.html">Login</a>
+                                        <a class="nav-link" href="/assistencia-tecnica/register.html">Register</a>
+                                        <a class="nav-link" href="/assistencia-tecnica/password.html">Forgot Password</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError">
+                                    Error
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="/assistencia-tecnica/401.html">401 Page</a>
+                                        <a class="nav-link" href="/assistencia-tecnica/404.html">404 Page</a>
+                                        <a class="nav-link" href="/assistencia-tecnica/500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div> -->
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Ordens de Serviço
+                        </a>
+                        <a class="nav-link" href="/assistencia-tecnica/servicos.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Serviços
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div id="content-main" class="page-os">
+
+                        <header class="content-header">
+                            <h1><i class="fas fa-wrench"></i> Nova Ordem de Serviço</h1>
+                        </header>
+
+                        <section id="nova-os-form" class="card-os">
+                            <h2>Detalhes da Solicitação</h2>
+                            <form id="form-os-detalhes">
+
+                                <div class="form-group-row">
+                                    <div class="form-item">
+                                        <label for="cliente-os">Cliente:</label>
+                                        <input type="text" id="cliente-os" name="cliente"
+                                            placeholder="Nome ou CPF/CNPJ do Cliente" required>
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="tecnico">Técnico Responsável:</label>
+                                        <select id="tecnico" name="tecnico">
+                                            <option value="">-- Selecione um Técnico --</option>
+                                            <option value="user_teste">Usuário Teste</option>
+                                            <option value="ana_carla">Ana Carla</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-row">
+                                    <div class="form-item">
+                                        <label for="equipamento">Equipamento/Produto:</label>
+                                        <input type="text" id="equipamento" name="equipamento" required>
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="prioridade">Prioridade:</label>
+                                        <select id="prioridade" name="prioridade">
+                                            <option value="baixa">Baixa</option>
+                                            <option value="media" selected>Média</option>
+                                            <option value="alta">Alta</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label for="problema">Descrição Detalhada do Problema / Defeito:</label>
+                                <textarea id="problema" name="problema" rows="5" required></textarea>
+
+                                <label for="observacoes">Observações Internas (Não visíveis ao cliente):</label>
+                                <textarea id="observacoes" name="observacoes" rows="2"></textarea>
+
+                                <button type="submit" class="btn-submit-os"><i class="fas fa-paper-plane"></i> Criar e
+                                    Iniciar OS</button>
+                                <p id="mensagem-os" class="alert-success" style="display: none; margin-top: 15px;"></p>
+                            </form>
+                        </section>
+
+                        <section id="historico-os-list" class="card-os table-card">
+                            <h2><i class="fas fa-history"></i> Últimas Ordens de Serviço Criadas</h2>
+                            <table id="tabela-os-completa">
+                                <thead>
+                                    <tr>
+                                        <th>OS #</th>
+                                        <th>Cliente</th>
+                                        <th>Equipamento</th>
+                                        <th>Entrada</th>
+                                        <th>Status</th>
+                                        <th>Prioridade</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; 2025 IASISTEM - Projeto saas Senac</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/assistencia-tecnica/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="assets/demo/chart-pie-demo.js"></script>
+
+
+    <script>
+        // Dados simulados para o técnico/admin
+let historicoOSAdmin = [
+    { os: "00126", cliente: "Maria Lima", equipamento: "Notebook Dell", entrada: "2024-06-25", status: "Aberto", prioridade: "Alta", problema: "O notebook não liga após a última atualização." },
+    { os: "00125", cliente: "João Silva", equipamento: "Monitor LG", entrada: "2024-06-15", status: "Em Serviço", prioridade: "Média", problema: "Tela piscando aleatoriamente, dificuldade de leitura." },
+    { os: "00124", cliente: "Ana Souza", equipamento: "Smartphone", entrada: "2024-06-01", status: "Pronto", prioridade: "Baixa", problema: "Troca de bateria e limpeza interna." }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarHistoricoOSAdmin();
+    configurarEventoNovaOSAdmin();
+});
+
+// -------------------------------------------------------------------
+// RENDERIZAÇÃO E EVENTOS DA TABELA
+// -------------------------------------------------------------------
+
+function renderizarHistoricoOSAdmin() {
+    const tbody = document.querySelector('#tabela-os-completa tbody');
+    tbody.innerHTML = ''; 
+
+    historicoOSAdmin.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        
+        const statusClass = item.status.toLowerCase().replace(' ', '-');
+        const prioridadeClass = item.prioridade.toLowerCase();
+
+        tr.innerHTML = `
+            <td><span class="os-number">#${item.os}</span></td>
+            <td>${item.cliente}</td>
+            <td>${item.equipamento}</td>
+            <td>${item.entrada}</td>
+            <td><span class="status-tag tag-${statusClass}">${item.status}</span></td>
+            <td><span class="priority-tag tag-${prioridadeClass}">${item.prioridade}</span></td>
+            <td>
+                <i class="fas fa-eye action-icon" title="Ver Detalhes" data-action="view" data-index="${index}"></i>
+                <i class="fas fa-pen action-icon" title="Editar OS" data-action="edit" data-index="${index}"></i>
+                <i class="fas fa-trash-alt action-icon action-delete" title="Excluir OS" data-action="delete" data-index="${index}"></i>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    // Configurar eventos de clique APÓS renderizar as linhas
+    configurarEventosTabela();
+}
+
+function configurarEventosTabela() {
+    document.querySelectorAll('.action-icon').forEach(icon => {
+        icon.removeEventListener('click', handleActionClick); // Remove ouvintes antigos (para evitar duplicação)
+        icon.addEventListener('click', handleActionClick); // Adiciona o novo ouvinte
+    });
+}
+
+function handleActionClick(event) {
+    const target = event.target;
+    const action = target.getAttribute('data-action');
+    const index = parseInt(target.getAttribute('data-index'));
+
+    if (action === 'view') {
+        visualizarOS(index);
+    } else if (action === 'edit') {
+        editarOS(index);
+    } else if (action === 'delete') {
+        excluirOS(index);
+    }
+}
+
+// -------------------------------------------------------------------
+// CRUD: VISUALIZAR, EDITAR, EXCLUIR
+// -------------------------------------------------------------------
+
+function visualizarOS(index) {
+    const os = historicoOSAdmin[index];
+    
+    // Simplesmente mostra um alerta com os dados para fins de simulação
+    const detalhes = `
+        OS: #${os.os}
+        Cliente: ${os.cliente}
+        Equipamento: ${os.equipamento}
+        Status: ${os.status}
+        Prioridade: ${os.prioridade}
+        Entrada: ${os.entrada}
+        Problema: ${os.problema}
+    `;
+
+    alert("--- Detalhes da Ordem de Serviço ---\n" + detalhes);
+    
+    // Em um sistema real, você abriria um Modal (pop-up) com esses detalhes.
+}
+
+function editarOS(index) {
+    const os = historicoOSAdmin[index];
+
+    // Simulação: Permite editar o status e a prioridade
+    const novoStatus = prompt(`Editando OS #${os.os}: Novo Status (Atual: ${os.status})? (Aberto, Em Serviço, Pronto)`);
+    const novaPrioridade = prompt(`Editando OS #${os.os}: Nova Prioridade (Atual: ${os.prioridade})? (Baixa, Média, Alta)`);
+
+    if (novoStatus !== null && novoStatus.trim() !== '') {
+        os.status = novoStatus.trim();
+    }
+    
+    if (novaPrioridade !== null && novaPrioridade.trim() !== '') {
+        os.prioridade = novaPrioridade.trim();
+    }
+    
+    // Em um sistema real, você abriria o formulário preenchido para edição
+    if (novoStatus !== null || novaPrioridade !== null) {
+        alert(`OS #${os.os} atualizada com sucesso!`);
+        renderizarHistoricoOSAdmin(); // Renderiza a tabela novamente com as alterações
+    }
+}
+
+function excluirOS(index) {
+    const os = historicoOSAdmin[index];
+    
+    if (confirm(`Tem certeza que deseja EXCLUIR a Ordem de Serviço #${os.os} de ${os.cliente}? Esta ação não pode ser desfeita.`)) {
+        // Remove o item do array
+        historicoOSAdmin.splice(index, 1);
+        
+        // Atualiza a visualização
+        alert(`OS #${os.os} excluída com sucesso.`);
+        renderizarHistoricoOSAdmin(); 
+    }
+}
+
+// -------------------------------------------------------------------
+// FUNCIONALIDADE DE NOVA ORDEM DE SERVIÇO (MANTIDA)
+// -------------------------------------------------------------------
+
+function configurarEventoNovaOSAdmin() {
+    const formOS = document.getElementById('form-os-detalhes');
+    const msgOS = document.getElementById('mensagem-os');
+
+    formOS.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // 1. Coleta os dados do formulário
+        const cliente = document.getElementById('cliente-os').value;
+        const equipamento = document.getElementById('equipamento').value;
+        const prioridade = document.getElementById('prioridade').value;
+        const problema = document.getElementById('problema').value; // Novo campo
+
+        // 2. Simulação de criação de um novo número de OS
+        const ultimoNumero = historicoOSAdmin.length > 0 ? parseInt(historicoOSAdmin[0].os) : 100; // Inicia em 100 se não houver itens
+        const novoNumeroOS = (ultimoNumero + 1).toString().padStart(5, '0');
+        const dataAtual = new Date().toISOString().split('T')[0];
+
+        const novaOS = {
+            os: novoNumeroOS,
+            cliente: cliente,
+            equipamento: equipamento,
+            entrada: dataAtual,
+            status: "Aberto",
+            prioridade: prioridade.charAt(0).toUpperCase() + prioridade.slice(1), 
+            problema: problema
+        };
+
+        // 3. Adiciona a nova OS ao topo do histórico
+        historicoOSAdmin.unshift(novaOS);
+
+        // 4. Limpa e atualiza
+        formOS.reset();
+        renderizarHistoricoOSAdmin();
+
+        // 5. Mostra mensagem de sucesso
+        msgOS.textContent = `Ordem de Serviço #${novoNumeroOS} criada com sucesso!`;
+        msgOS.style.display = 'block';
+
+        // Esconde a mensagem após 5 segundos
+        setTimeout(() => {
+            msgOS.style.display = 'none';
+        }, 5000);
+    });
+}
+    </script>
+
+
+</body>
+
+</html>

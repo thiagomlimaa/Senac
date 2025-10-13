@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ia Sistem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/assistencia-tecnica/css/index.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="login-container">
+            <div id="logo"><img src="imagens/ia-system.png" alt="logo ia sistem"></div>
+            
+            <form onsubmit="return acesso()">
+                <label for="email">Usuário</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+
+                <button type="submit">Acessar</button>
+
+                <div class="forgot-password-link">
+                    <a href="/assistencia-tecnica/password.html">Esqueci minha senha</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script>
+        function acesso() {
+            let email = document.getElementById("email").value;
+            let senha = document.getElementById("senha").value;
+
+            if (email == "tecnico@gmail.com" && senha == "tecnico") {
+                window.location.href = "usuarios/tecnico.html";
+                return false;
+            }
+            else if (email == "gestor@gmail.com" && senha == "gestor") {
+                window.location.href = "usuarios/gestor.html";
+                return false;
+            }
+            else if (email == "cliente@gmail.com" && senha == "cliente") {
+                window.location.href = "usuarios/cliente.html";
+                return false;
+            }
+            else if (email == "atendente@gmail.com" && senha == "atendente") {
+                window.location.href = "usuarios/atendente.html";
+                return false;
+            }
+            else {
+                alert("Usuário ou senha incorretos");
+                return false;
+            }
+        }
+    </script>
+
+    <footer>
+        <p>2025 © IASISTEM - Projeto saas Senac</p>
+    </footer>
+</body>
+
+</html>
