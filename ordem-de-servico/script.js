@@ -1,3 +1,7 @@
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+
+
+
 $(document).ready(function() {
   const statusCiclo = ['Em Análise', 'Aguardando Peças', 'Pronto'];
 
@@ -48,3 +52,16 @@ $(document).ready(function() {
     }
   });
 });
+
+
+
+
+ src="https://code.jquery.com/jquery-3.6.0.min.js"
+
+// opçoes de status
+ 
+  $("#status").change(function() {
+    const corSelecionada = $(this).val();
+    $("#caixa").css("background-color", corSelecionada || "gray");
+  });
+
