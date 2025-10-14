@@ -1,0 +1,68 @@
+body {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.header {
+  background-color: #3f51b5;
+  color: white;
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+  color: #ccc;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.os-card {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: #2b2b2b;
+}
+
+.os-status {
+  width: 150px;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-verde {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-vermelho {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-amarelo {
+  background-color: #ffc107;
+  color: black;
+}
+
+.os-content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.os-actions button {
+  margin-bottom: 8px;
+}
+
+.os-actions button i {
+  font-size: 1rem;
+}
