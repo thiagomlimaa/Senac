@@ -1,7 +1,0 @@
-  /* Estilos custom */
-  body { background: #f6f8fa; }
-  .container { max-width: 1100px; }
-  .table-wrap { background: #fff; padding: 1rem; border-radius: .5rem; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
-  .required::after { content: "*"; color: #d00; margin-left: 4px; font-size: 0.9em;}
-  .no-data { text-align: center; color: #777; padding: 2rem 0; }
-  .small-muted { font-size: .85rem; color: #666; }
