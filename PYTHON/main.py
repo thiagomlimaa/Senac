@@ -14,17 +14,7 @@
 
 
 
-# Solicite a idade do usuário e informe em qual faixa etária ele se encontra: 
- 
-#  Criança (0–12) 
- 
-#  Adolescente (13–17) 
- 
-#  Adulto (18–59) 
- 
-#  Idoso (60+) 
- 
-#  Dica: utilize múltiplos elif.
+# Atividade 2
 
 
 
@@ -41,20 +31,43 @@
 
 
 
-# Crie um programa que calcule a média de três notas e determine a situação do aluno: 
- 
-#  Média < 5 → Reprovado 
- 
-#  5 ≤ Média < 7 → Recuperação 
- 
-#  Média ≥ 7 → Aprovado 
- 
-#  Desafio extra: adicione uma condição para validar se as notas são válidas (entre 0 e 10).
-
-nota1 = 7
-nota2 = 5
-nota3 = 9
- 
-media = nota1 + nota2 + nota 3
 
 
+
+# atividade 3
+
+# nota1 = 7
+# nota2 = 5
+# nota3 = 9
+
+# if 0 <= nota1 <= 10 and 0 <= nota2 <= 10 and 0 <= nota3 <= 10:
+#     media = (nota1 + nota2 + nota3) / 3
+#     print(f"Sua média das 3 notas é {media}")
+
+#     if media < 5:
+#         print("Reprovado")
+#     elif media < 7:
+#         print("Recuperação")
+#     else:
+#         print("Aprovado")
+# else:
+#     print("Erro: as notas devem estar entre 0 e 10.")
+
+
+
+
+
+# ATIVIDADE 4 
+
+# valorCompra = float(input("Digite o valor da sua compra: "))
+# tipoCliente = input("Qual é seu tipo de cliente: ")
+
+# vip = valorCompra * 0.10
+# func = valorCompra * 0.20
+
+# if tipoCliente == "comum":
+#     print(valorCompra)
+# elif tipoCliente == "vip":
+#     print(vip)
+# elif tipoCliente == "funcionário":
+#     print(func)
