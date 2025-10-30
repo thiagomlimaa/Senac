@@ -59,15 +59,36 @@
 
 # ATIVIDADE 4 
 
-# valorCompra = float(input("Digite o valor da sua compra: "))
-# tipoCliente = input("Qual é seu tipo de cliente: ")
+valorCompra = float(input("Digite o valor da sua compra: "))
+tipoCliente = input("Qual é seu tipo de cliente: ")
 
-# vip = valorCompra * 0.10
-# func = valorCompra * 0.20
+vip = valorCompra * 0.10
+func = valorCompra * 0.20
 
-# if tipoCliente == "comum":
-#     print(valorCompra)
-# elif tipoCliente == "vip":
-#     print(vip)
-# elif tipoCliente == "funcionário":
-#     print(func)
+if tipoCliente == "comum":
+    print(valorCompra)
+elif tipoCliente == "vip":
+    print(vip)
+elif tipoCliente == "funcionário":
+    print(func)
+
+
+
+
+
+nota1 = 7
+nota2 = 5
+nota3 = 9
+
+if 0 <= nota1 <= 10 and 0 <= nota2 <= 10 and 0 <= nota3 <= 10:
+    media = (nota1 + nota2 + nota3) / 3
+    print(f"Sua média das 3 notas é {media}")
+
+    if media < 5:
+        print("Reprovado")
+    elif media < 7:
+        print("Recuperação")
+    else:
+        print("Aprovado")
+else:
+    print("Erro: as notas devem estar entre 0 e 10.")
