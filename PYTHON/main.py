@@ -92,3 +92,22 @@ if 0 <= nota1 <= 10 and 0 <= nota2 <= 10 and 0 <= nota3 <= 10:
         print("Aprovado")
 else:
     print("Erro: as notas devem estar entre 0 e 10.")
+
+
+
+
+    import random
+
+numero_secreto = random.randint(1, 100)
+palpite = 0
+
+print("🎲 Adivinhe o número entre 1 e 100!")
+
+while palpite != numero_secreto:
+    palpite = int(input("Seu palpite: "))
+    if palpite < numero_secreto:
+        print("📈 Muito baixo!")
+    elif palpite > numero_secreto:
+        print("📉 Muito alto!")
+    else:
+        print("🎉 Parabéns! Você acertou!")
