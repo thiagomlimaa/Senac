@@ -78,4 +78,35 @@ def listar_produtos(produtos):
         print("Não a produtos cadastrado")
     else:
         print(f"Produto '{nome}' cadastrado com sucesso!")
+        for p in produtos:
+            print(f"{p['nome']} - R${p['preco']:.2f} - {p['quantidade']} unidades")
+
+def listar_produtos(produtos):
+    if not produtos:
+        print("Nenhum produto cadastrado.")
+    else:
+        print("\n--- Lista de Produtos ---")
+        for p in produtos:
+            print(f"{p['nome']} - R${p['preco']:.2f} - {p['quantidade']} unidades")
+
+def calcular_total(produtos):
+    total = sum(p['preco'] * p['quantidade'] for p in produtos)
+    print(f"\nValor total em estoque: R${total:.2f}")
+
+produtos = []
+
+while True:
+    opcao = menu()
+    if opcao == '1':
+        cadastrar_produto(produtos)
+    elif opcao == '2':
+        listar_produtos(produtos)
+    elif opcao == '3':
+        calcular_total(produtos)
+    elif opcao == '4':
+        print("Saindo do programa")
+        break
+    else:
+        print("Tente novamente.")
+        
 
