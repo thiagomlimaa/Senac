@@ -1,0 +1,127 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>Olá, Full-Stack Developer!</h1>"
+
+@app.route("/sobre")
+def sobre():
+    return "Esta é a página SOBRE"
+
+@app.route("/contato")
+def contato():
+    return "Página de contato"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+    
+-------app.py completo ----
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>Olá, Full Stack Developer!</h1>"
+
+@app.route("/sobre")
+def sobre():
+    return "Esta é a página SOBRE"
+
+@app.route("/contato")
+def contato():
+    return "Página de contato"
+
+@app.route("/soma", methods=["GET", "POST"])
+def soma():
+    if request.method == "POST":
+        n1 = int(request.form["n1"])
+        n2 = int(request.form["n2"])
+        return f"A soma é {n1 + n2}"
+
+    return """
+        <form method='POST'>
+            Número 1: <input name='n1'><br>
+            Número 2: <input name='n2'><br>
+            <button type='submit'>Somar</button>
+        </form>
+    """
+@app.route("/api/usuario")
+def usuario():
+    return {
+        "nome": "Ana",
+        "idade": 23,
+        "cargo": "Estudante de Full Stack"
+    }
+
+@app.route("/inicio")
+def inicio():
+    return render_template("inicio.html", nome="Pedro")
+    
+@app.route("/dobro/<int:n>")
+def dobro(n):
+    return f"O dobro de {n} é {n*2}"
+    
+@app.route("/formulario")
+def formulario():
+    return render_template("formulario.html")
+    
+@app.route("/salvar", methods=["GET", "POST"])
+def salvar():
+    return render_template("cadastro.html", nome=request.form["nome"], idade=request.form["idade"] )
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+----- inicio.html ----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ nome }}</h1>
+    <a href="/sobre">sobre</a>
+    <a href="/contato">contato</a>
+    <a href="/soma">soma</a>
+    <a href="/api/usuario">API</a>
+</body>
+</html>
+
+---- formulario.html -----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/salvar" method="post">
+        <input type="text" name="nome"><br>
+        <input type="text" name="idade">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+
+----- cadastro.html -----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Olá, {{ nome }}! Você tem {{ idade }} anos
+</body>
+</html>
