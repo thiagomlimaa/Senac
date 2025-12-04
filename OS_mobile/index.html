@@ -563,6 +563,9 @@
             <h1>Ordens de Serviço</h1>
             <div class="breadcrumb">Dashboard / Ordens de Serviço</div>
             <div class="header-actions">
+                <button class="btn" onclick="fazerLogout()" style="background-color: #8b2e2e; color: white;">
+                    <span>🚪</span> Sair
+                </button>
                 <button class="btn btn-export" onclick="exportarDados()">
                     <span>📊</span> Exportar
                 </button>
@@ -665,6 +668,7 @@
         </div>
     </div>
 
+    <script src="app.js"></script>
     <!-- Modal Nova/Editar O.S -->
     <div class="modal" id="modalOS">
         <div class="modal-content">
@@ -676,19 +680,19 @@
                 <input type="hidden" id="editIndex">
                 <div class="form-group">
                     <label>Cliente</label>
-                    <input type="text" id="cliente" required>
+                    <input type="text" id="cliente" name="cliente" required>
                 </div>
                 <div class="form-group">
                     <label>Aparelho</label>
-                    <input type="text" id="aparelho" required>
+                    <input type="text" id="aparelho" name="aparelho" required>
                 </div>
                 <div class="form-group">
                     <label>Problema</label>
-                    <textarea id="problema" required></textarea>
+                    <textarea id="problema" name="problema" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Status</label>
-                    <select id="status" required>
+                    <select id="status" name="status" required>
                         <option value="Aguardando">Aguardando</option>
                         <option value="Em Reparo">Em Reparo</option>
                         <option value="Concluído">Concluído</option>
@@ -696,7 +700,7 @@
                 </div>
                 <div class="form-group">
                     <label>Prioridade</label>
-                    <select id="prioridade" required>
+                    <select id="prioridade" name="prioridade" required>
                         <option value="Baixa">Baixa</option>
                         <option value="Normal">Normal</option>
                         <option value="Alta">Alta</option>
@@ -705,11 +709,11 @@
                 </div>
                 <div class="form-group">
                     <label>Data</label>
-                    <input type="date" id="data" required>
+                    <input type="date" id="data" name="data" required>
                 </div>
                 <div class="form-group">
                     <label>Prazo</label>
-                    <input type="date" id="prazo" required>
+                    <input type="date" id="prazo" name="prazo" required>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn btn-cancel" onclick="fecharModal()">Cancelar</button>
@@ -719,6 +723,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>
